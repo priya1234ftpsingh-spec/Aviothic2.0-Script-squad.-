@@ -1,0 +1,105 @@
+/* KIT Lost & Found — Polished Modern UI/UX (Responsive & Animated) */
+:root{
+  --bg:#f3f6fb;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --text:#0f172a;
+  --kit-blue:#0b3d91;
+  --accent:#0fa3a3;
+  --accent-2:#ffb652;
+  --radius:14px;
+  --shadow:0 10px 30px rgba(15,23,42,0.08);
+  --container:1100px;
+  font-family:"Poppins",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+
+/* Global Reset */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;}
+.container{max-width:var(--container);margin:0 auto;padding:20px;}
+
+/* Header */
+.site-header{position:sticky;top:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(6px);z-index:50;border-bottom:1px solid rgba(15,23,42,0.04);transition:all 0.3s;}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;animation:fadeSlideIn 0.6s forwards;}
+.brand-logo{width:48px;height:48px;border-radius:10px;object-fit:cover;box-shadow:var(--shadow);}
+.brand-text h1{margin:0;font-size:16px;}
+.brand-text .tag{font-size:12px;color:var(--muted);}
+.nav-list{display:flex;gap:10px;list-style:none;margin:0;padding:0;}
+.nav-link{text-decoration:none;color:var(--text);padding:8px 12px;border-radius:10px;font-weight:600;transition:all .3s;}
+.nav-link:hover{background:linear-gradient(90deg,var(--kit-blue),var(--accent));color:#fff;transform:translateY(-2px);}
+.nav-link.active{background:linear-gradient(90deg,var(--kit-blue),var(--accent));color:#fff;}
+nav button{transition:all 0.3s;}
+nav button:hover{transform:translateY(-2px) scale(1.05);box-shadow:0 12px 28px rgba(11,61,145,0.2);background:linear-gradient(135deg,var(--accent),var(--kit-blue));}
+
+/* Hero Section */
+.hero{display:flex;align-items:center;gap:28px;padding:48px 0;flex-wrap:wrap;}
+.hero-left{flex:1;opacity:0;transform:translateY(20px);animation:fadeSlideIn 0.8s forwards;animation-delay:0.2s;}
+.hero-left h2{font-size:34px;margin:0 0 8px;}
+.lead{color:var(--muted);margin:0 0 18px;}
+.hero-actions{display:flex;gap:12px;opacity:0;transform:translateY(20px);animation:fadeSlideIn 0.8s forwards;animation-delay:0.4s;}
+.btn{padding:10px 16px;border-radius:12px;border:0;cursor:pointer;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,0.04);font-weight:600;transition:transform .3s,box-shadow .3s,background .3s;}
+.btn.primary{background:linear-gradient(135deg,var(--kit-blue),var(--accent));color:#fff;}
+.btn:hover{transform:translateY(-4px) scale(1.05);box-shadow:0 18px 36px rgba(11,61,145,0.12);}
+.hero-right{flex:1;display:flex;justify-content:center;opacity:0;transform:translateY(20px);animation:fadeSlideIn 0.8s forwards;animation-delay:0.6s;}
+.hero-image{height:100%;width:100%;max-width:520px;border-radius:18px;box-shadow:var(--shadow);object-fit:cover;}
+
+/* Quick Actions */
+.quick-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:18px 0;}
+.card-quick{text-decoration:none;background:linear-gradient(180deg,#fff,#fbfdff);padding:18px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:600;color:var(--kit-blue);box-shadow:var(--shadow);opacity:0;transform:translateY(20px);animation:fadeUp 0.5s forwards;}
+.card-quick:nth-child(1){animation-delay:0.1s;}
+.card-quick:nth-child(2){animation-delay:0.2s;}
+.card-quick:nth-child(3){animation-delay:0.3s;}
+.card-quick:nth-child(4){animation-delay:0.4s;}
+
+/* Controls */
+.controls{display:flex;gap:12px;margin:12px 0 18px;flex-wrap:wrap;}
+.controls input,.controls select{padding:10px;border-radius:10px;border:1px solid rgba(15,23,42,0.06);min-width:180px;transition:all 0.3s;}
+.controls input:focus,.controls select:focus{border-color:var(--kit-blue);box-shadow:0 0 8px var(--kit-blue);}
+
+/* Card Grid */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;}
+.card{background:var(--card);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);transition:transform .3s,box-shadow .3s;}
+.card:hover{transform:translateY(-10px) rotateX(2deg);box-shadow:0 28px 60px rgba(11,61,145,0.12);}
+.card img{width:100%;height:160px;object-fit:cover;}
+.card-body{padding:14px;}
+.card-body h3{margin:0 0 8px;font-size:16px;}
+.card-body p{color:var(--muted);margin:0 0 10px;}
+.badge{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--accent);color:#fff;font-weight:600;font-size:12px;}
+
+/* Forms (Login/Signup/Report) */
+.form-card,.form-container{
+  background:linear-gradient(180deg,rgba(255,255,255,0.9),#fff);
+  padding:20px;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  max-width:400px;
+  margin:40px auto;
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeSlideIn 0.8s forwards;
+}
+.form-container h2{text-align:center;color:var(--kit-blue);margin-bottom:1.5rem;}
+.form-container input,.form-container textarea,.form-container select{
+  width:100%;padding:10px;border-radius:var(--radius);border:1px solid rgba(15,23,42,0.06);margin-bottom:12px;outline:none;transition:0.3s;
+}
+.form-container input:focus,.form-container textarea:focus,.form-container select:focus{border-color:var(--kit-blue);box-shadow:0 0 6px var(--kit-blue);}
+.form-container textarea{min-height:80px;resize:vertical;}
+.form-container button{width:100%;padding:0.8rem;background:linear-gradient(135deg,var(--kit-blue),var(--accent));color:#fff;border:none;border-radius:var(--radius);margin-top:1rem;font-weight:600;cursor:pointer;transition:all 0.3s;}
+.form-container button:hover{background:linear-gradient(135deg,var(--accent),var(--kit-blue));transform:translateY(-2px) scale(1.05);box-shadow:0 10px 25px rgba(11,61,145,0.15);}
+
+/* Dark Theme */
+:root[data-theme="dark"]{
+  --bg:#071029;
+  --card:#0e1624;
+  --muted:#9aa6b2;
+  --text:#e6eef8;
+  --kit-blue:#0b3d91;
+  --accent:#0fa3a3;
+  --accent-2:#ffb652;
+  --shadow:0 12px 34px rgba(0,0,0,0.5);
+}
+
+/* Keyframes */
+@keyframes fadeSlideIn{to{opacity:1;transform:translateY(0);}}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0);}}

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>KIT Lost & Found — Lost Items</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><img src="assets/kit-logo.png" alt="KIT" class="brand-logo"><div class="brand-text"><h1>KIT Lost & Found</h1></div></a>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="lost.html" class="nav-link active">Lost Items</a></li>
+          <li><a href="found.html" class="nav-link">Found Items</a></li>
+          <li><a href="report.html" class="nav-link">Report</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="login.html" class="nav-link">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Lost Items</h2>
+    <div class="controls">
+      <input id="searchLost" type="search" placeholder="Search lost items..." />
+      <select id="filterLostCategory"><option value="">All categories</option><option>Wallet</option><option>Phone</option><option>ID</option><option>Laptop</option><option>Bag</option><option>Keys</option><option>Documents</option><option>Other</option></select>
+    </div>
+    <div id="lostGrid" class="card-grid" aria-live="polite"></div>
+  </main>
+
+  <!-- <footer class="site-footer"><div class="container"><small>KIT Demo</small></div></footer> -->
+  <script src="app.js" defer></script>
+</body>
+</html>

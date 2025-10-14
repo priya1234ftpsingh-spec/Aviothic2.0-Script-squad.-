@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>KIT Lost & Found — Home</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header / Navbar -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/kit-logo.png" alt="KIT Logo" class="brand-logo">
+        <div class="brand-text">
+          <h1>KIT Lost & Found</h1>
+          <p class="tag">Helping students reunite with their belongings</p>
+        </div>
+      </a>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="lost.html" class="nav-link">Lost Items</a></li>
+          <li><a href="found.html" class="nav-link">Found Items</a></li>
+          <li><a href="report.html" class="nav-link">Report</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="login.html" class="nav-link">Login</a></li>
+        </ul>
+      </nav>
+      <div>
+        <button id="themeToggle" class="icon-btn" title="Toggle theme">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-left container">
+        <h2>KIT Lost & Found</h2>
+        <p class="lead">A simple, fast, and secure place to report lost or found items on campus. Built for KIT hackathon demo.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="report.html">Report Item</a>
+          <a class="btn" href="found.html">View Found Items</a>
+        </div>
+        <div class="stats">
+          <div><strong id="statLost">0</strong><span>Lost</span></div>
+          <div><strong id="statFound">0</strong><span>Found</span></div>
+          <div><strong id="statClaimed">0</strong><span>Claimed</span></div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <img src="https://www.kit.ac.in/wp-content/uploads/2022/01/cover-768x509.jpg" alt="KIT Campus" class="hero-image">
+      </div>
+    </section>
+
+    <section class="container">
+      <h3>Quick Actions</h3>
+      <div class="quick-grid">
+        <a class="card-quick" href="report.html">Report Lost/Found</a>
+        <a class="card-quick" href="lost.html">Browse Lost Items</a>
+        <a class="card-quick" href="found.html">Browse Found Items</a>
+        <a class="card-quick" href="login.html">My Reports (Login)</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- <footer class="site-footer">
+    <div class="container">
+      <small>Made for <strong>KIT Hackathon 2025</strong> — Demo (client-side only)</small>
+    </div>
+  </footer> -->
+
+  <script src="app.js" defer></script>
+  <script>
+document.getElementById("login-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  const res = await fetch("/api/users/login", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email, password }),
+  });
+  
+  const data = await res.json();
+  alert(data.message);
+});
+</script>
+</body>
+</html>
+
